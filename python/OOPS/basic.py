@@ -5,6 +5,7 @@ class Data:
 
 
 p1 = Data("4", "Ping")
+
 print(p1.age)
 print(p1.value)
 print(p1)
