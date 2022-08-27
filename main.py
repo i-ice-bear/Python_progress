@@ -12,4 +12,13 @@ def argsFunction(*args):
         print("args is initially working")
 
 
-argsFunction("Data")
+def kwargsFunction(**kwargs):
+    print(type(kwargs))
+    for key, value in kwargs.items:
+        print(key, value)
+    if len(kwargs == 3):
+        print("args length is", len(kwargs))
+    else:
+        print("args is initially working")
+
+
