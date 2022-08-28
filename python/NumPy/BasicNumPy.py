@@ -18,3 +18,5 @@ print(floatArrange)
 lineSpaceArray = np.linspace(1, 4, 6, 8)
 print(lineSpaceArray)
 
+
+
