@@ -1,25 +1,24 @@
-import matplotlib.pyplot as plt
+get_args = float(input("Get your args : "))
 
-# x axis values
-x = [1, 2, 3, 4, 5, 6]
-# corresponding y axis values
-y = [2, 4, 1, 5, 2, 6]
 
-# plotting the points
-plt.plot(x, y, color='green', linestyle='dashed', linewidth=3,
-         marker='o', markerfacecolor='blue', markersize=12)
+def args(*args):
+    print(type(args))
+    if get_args > 3:
+        print(["Arg-1", "Arg-2", "Arg-3", "Arg-4", "Arg-", args])
+        print("Args is greater than 3")
+    elif get_args < 3:
+        print(["Arg-1", "Arg-2", "Arg-3"])
+        print("Args is smaller than 3 ")
+    else:
+        print("Args is equally working")
 
-# setting x and y-axis range
-plt.ylim(1, 8)
-plt.xlim(1, 8)
 
-# naming the x-axis
-plt.xlabel('x - axis')
-# naming the y-axis
-plt.ylabel('y - axis')
+def kwargs(**kwargs):
+    print(type(kwargs))
+    for key, value in kwargs.items():
+        print(key, value)
+    if get_args == 4:
+        print("Args", "Arg-1", "Arg", "Arg-2")
 
-# giving a title to my graph
-plt.title('Some cool customizations!')
 
-# function to show the plot
-plt.show()
+kwargs()

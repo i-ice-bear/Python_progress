@@ -1,22 +1,9 @@
-import numpy as np
+P = float(input("Enter money lent : "))
+R = float(input("Enter rate of interest : "))
+T = float(input("Enter time in years : "))
 
-listArray = [1, 2, 3, 4]
-numArray = np.array(listArray)
-
-print(numArray)
-
-# arranging the numbers in numpy
-
-arrangeArray = np.arange(8)
-print(arrangeArray)
-
-floatArrange = np.arange(1, 2, 3, np.float32)
-print(floatArrange)
-
-# creating array with a numerical range using lines paceFunction()
-
-lineSpaceArray = np.linspace(1, 4, 6, 8)
-print(lineSpaceArray)
-
+SI = (P * R * T) / 100
+amount_payable = P + SI
+print("Amount payable is : ",amount_payable)
 
 
