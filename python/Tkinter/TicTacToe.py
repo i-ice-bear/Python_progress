@@ -9,7 +9,6 @@ def printBoard(xState, zState):
     seven = 'X' if xState[7] else ('O' if zState[7] else 0)
     eight = 'X' if xState[8] else ('O' if zState[8] else 0)
 
-
     print(f" {zero} | {one} | {two} ")
     print(f" --|---|-- ")
     print(f" {three} | {four} | {five} ")
