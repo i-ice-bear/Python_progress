@@ -5,7 +5,7 @@ print(array_state)
 
 
 def argsFunction(*args):
-    print(type(args));
+    print(type(args))
     if len(args) == 3:
         return "args len is : 3"
     else:
