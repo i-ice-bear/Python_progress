@@ -1,0 +1,6 @@
+main.py
+formula/__init__.py
+mathPackage.egg-info/PKG-INFO
+mathPackage.egg-info/SOURCES.txt
+mathPackage.egg-info/dependency_links.txt
+mathPackage.egg-info/top_level.txt
