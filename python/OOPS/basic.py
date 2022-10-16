@@ -1,11 +1,14 @@
-class Data:
-    def __init__(self, age, value):
-        self.age = age
-        self.value = value
+import os
 
 
-p1 = Data("4", "Ping")
+class Main:
+    def __init__(self, __date, __state, __package):
+        self.date = __date
+        self.state = __state
+        self.package = __package
 
-print(p1.age)
-print(p1.value)
-print(p1)
+    def outro(self):
+        print("Date is : " + self.date + " State library is : " + self.state + " Package name is : " + self.package)
+
+open = Main("40", "redux", "tensorflow")
+open.outro()
