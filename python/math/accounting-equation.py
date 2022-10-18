@@ -4,6 +4,4 @@ T = float(input("Enter time in years : "))
 
 SI = (P * R * T) / 100
 amount_payable = P + SI
-print("Amount payable is : ",amount_payable)
-
-
+print("Amount payable is : ", amount_payable)
