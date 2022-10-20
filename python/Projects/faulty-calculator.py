@@ -1,7 +1,5 @@
 import numpy as np
 
-array_len = np.array([12, 3, 4])
-
 
 def calculation():
     first_number = int(input("Enter the first number : "))
