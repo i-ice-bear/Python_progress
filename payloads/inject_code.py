@@ -1,6 +1,19 @@
+import os
+from pylane.core.injector import inject as _inject
 
 
-# module entrance hosts will these formats will cover in the functions
+def inject(module, entrance, host, port, inject_args):
+    """
+    inject process with module.entrance
+    """
+    encoding = inject_args.get('encoding', 'utf-8')
+    code = create_payload(module, entrance, host, port, encoding)
+    inject_args['code'] = code
+    success = _inject(**inject_args)
+    if not success:
+        exit(1)
+
+
 def create_payload(module, entrance, host, port, encoding):
     """
     generate inject payload code for an exist file
@@ -21,6 +34,4 @@ def create_payload(module, entrance, host, port, encoding):
         encoding=encoding
     )
     payload += '\nstart_remote_shell()'
-    return payload 
-# don't run after initialization
-create_payload()
+    return payload
