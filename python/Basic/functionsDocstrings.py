@@ -26,3 +26,6 @@ print(function_variable)
 
 
 print(averageFunction.__doc__)
+
+if __name__ == "__main__":
+    print(__name__)
