@@ -1,11 +1,15 @@
-# Operators in python
-# - Identity operators
-# - Membership operators
-# - Assignment operators
-# - Comparison operators
-# - Logical Operators - Logic operators
-# - Arithmetic Operators - Numerical Calculations
-# - Bitwise operators
+"""
+   Operators in python
+
+ - Identity operators
+ - Membership operators
+ - Assignment operators
+ - Comparison operators
+ - Logical Operators - Logic operators
+ - Arithmetic Operators - Numerical Calculations
+ - Bitwise operators
+
+"""
 
 # Arithmetic operator
 print("Floor : ", 5 // 3)

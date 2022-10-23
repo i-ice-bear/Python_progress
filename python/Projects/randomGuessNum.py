@@ -1,5 +1,4 @@
 import random
-import numpy as np
 
 try:
     difficulty_level = str(input("Enter the difficulty level easy or medium or hard: ")).lower()
