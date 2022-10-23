@@ -68,7 +68,6 @@ def read_Files():
        This function is interconnected with writing_and_appending()
        to add content in file . without any data loss and error.
     """
-
     openFileDatas = open("../../generated/Jimmy.txt", 'r')
     print(openFileDatas.read())
 
