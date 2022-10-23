@@ -44,7 +44,6 @@ def read_lineByLine():
         print(lines)
 
 
-
 def writing_and_appending():
     """
        This function is interconnected with read_Files()
@@ -60,9 +59,6 @@ def writing_and_appending():
     open_file_init.close()
 
 
-writing_and_appending()
-
-
 def read_Files():
     """
        This function is interconnected with writing_and_appending()
@@ -72,4 +68,14 @@ def read_Files():
     print(openFileDatas.read())
 
 
-read_Files()
+def tell_line():
+    tell_file_init = open("../../generated/Jimmy.txt")
+    print(tell_file_init.tell())  # it tells the nth number of character
+    print(tell_file_init.readline())
+    print(tell_file_init.seek(10))  # it seeks out from the nth number of character
+    print(tell_file_init.readline())
+    print(tell_file_init.readline())
+    print(tell_file_init.readline())
+
+
+tell_line()
