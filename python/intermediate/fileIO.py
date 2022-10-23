@@ -35,9 +35,6 @@ def open_fileFunc():
     open_file.close()
 
 
-open_fileFunc()
-
-
 def read_lineByLine():
     open_fileNew = open("../../generated/jimmy", "r")
     # content = open_fileNew.read()
@@ -47,4 +44,33 @@ def read_lineByLine():
         print(lines)
 
 
-read_lineByLine()
+
+def writing_and_appending():
+    """
+       This function is interconnected with read_Files()
+       to Read the file. without any content change.
+
+    """
+    open_file_init = open("../../generated/Jimmy.txt", "w")
+    open_file_init.write("Hello,")
+    open_file_init.write("\nI love chain-smokers music")
+    open_file_init.write("\nAnd I love blackpink also ")
+    open_file_init.write("\nAlok is the best brazillian slap house producer")
+    print(open_file_init.fileno(), "\n")
+    open_file_init.close()
+
+
+writing_and_appending()
+
+
+def read_Files():
+    """
+       This function is interconnected with writing_and_appending()
+       to add content in file . without any data loss and error.
+    """
+
+    openFileDatas = open("../../generated/Jimmy.txt", 'r')
+    print(openFileDatas.read())
+
+
+read_Files()
