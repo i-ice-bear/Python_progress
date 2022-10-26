@@ -6,7 +6,7 @@ with open("../../generated/Jimmy.txt") as f:
     print(f.read())
 
 
-with open("../../generated/api-data.txt", "wt", encoding="utf-8") as s:
+with open("../../generated/api-data.json", "wt", encoding="utf-8") as s:
     """ Add the new text from the existing content """
     fetch_url_data = requests.get(fetch_url)
     json_fetch_data = str(fetch_url_data.json())
