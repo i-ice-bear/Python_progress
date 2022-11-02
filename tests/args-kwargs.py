@@ -1,24 +1,19 @@
-get_args = float(input("Get your args : "))
+import numpy as np
+
+args_list = ["Stored-Directory", "Non-Volatile-Memory", "Volatile-Memory"]
+kwargs_list = {"Volatile-Memory": "Random-Access-Memory", "Non-volatile": "Hard Disk (HDD)"}
 
 
 def args(*args):
-    print(type(args))
-    if get_args > 3:
-        print(["Arg-1", "Arg-2", "Arg-3", "Arg-4", "Arg-", args])
-        print("Args is greater than 3")
-    elif get_args < 3:
-        print(["Arg-1", "Arg-2", "Arg-3"])
-        print("Args is smaller than 3 ")
-    else:
-        print("Args is equally working")
+    for items in args:
+        print(np.array([items]), end=" ")
 
 
 def kwargs(**kwargs):
     print(type(kwargs))
     for key, value in kwargs.items():
-        print(key, value)
-    if get_args == 4:
-        print("Args", "Arg-1", "Arg", "Arg-2")
+        print(key, value, end=" ")
 
 
-kwargs()
+args(*args_list)
+kwargs(**kwargs_list)
