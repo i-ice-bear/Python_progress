@@ -15,7 +15,7 @@ def factorialFunction_iterative(n):
 
 
 userInput = int(input("Enter your number : "))
-# print(factorialFunction_iterative(userInput))
+print(factorialFunction_iterative(userInput))
 
 
 # Recursive method
