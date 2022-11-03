@@ -1,36 +1,60 @@
-import time
-import requests
+"""
+    Map function map() : the map function is the most powerful function
+    which runs very effectively in programs. In a single line.
 
-fetch_url = "https://newsapi.org/v2/top-headlines?country=kr&apiKey=391b845c95b64b0ea4a5c67fe7d31a41"
+    :Important: list() function is compulsory for returning the list using with
+                the map function like array-string{boolean} conversion. anything
+                else etc.
 
-numbers = ["5", "15", "25"]
-numbers = list(map(int, numbers))
-fixed_tick = time.time()
+    :return: Anatomy of map({inbuilt-parameters}, {for_which_should_logic_applied} )
 
-# random For loop
-# for i in range(len(numbers)):
-#     numbers[i] = int(numbers[i])
+"""
 
-numbers[2] = numbers[2] + 1
-print(numbers[2])
+number_list = ["2", "4", "6", "8", "10"]  # assigned a number array in the form of integer
+function_map_list = list(map(int, number_list))  # converted number array into integer via map.
+print(function_map_list)
 
-
-def square_function(a):
-    return a * a
+square_array = [2, 4, 6, 8, 10]
 
 
-def fetch_to_append_in_generated():
-    result_get = requests.get(fetch_url)
-    with open("../../generated/results.json", "a", encoding="utf-8") as result_file:
-        result_file.write(result_get)
+def num_to_square(element):
+    """
+    :param: multiplication of number from the number for getting the square element:
+    :return: element * element ( 2 * 2 )
+    """
+    return element * element
+    pass
 
 
-fetch_to_append_in_generated()
+square_loops = list(map(num_to_square, square_array))
+print(square_loops)
+
+"""
+    Iteration from for-loop works like map function 
+"""
 
 
-current_function_tick_time = time.time() - fixed_tick
-print(current_function_tick_time)
+# def for_loop_looping():
+#     for i in range(len(number_list)):
+#         number_list[i] = int(number_list[i])
+#     number_list[4] = number_list[4]
+#     print(number_list)
 
-list_num = [2, 3, 4, 5, 6, 7, 8, 9, 10]
-square_list = list(map(square_function, list_num))
-print(square_list, type(square_list))
+
+def square_func(square_element):
+    return square_element * square_element
+    pass
+
+
+def cube_func(cube_element):
+    return cube_element * cube_element * cube_element
+    pass
+
+
+function_array = [square_func, cube_func]
+
+for i in range(3):
+    val_exec = list(map(lambda x: x(i), function_array))
+    print(val_exec)
+
+

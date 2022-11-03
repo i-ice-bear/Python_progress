@@ -42,4 +42,4 @@ for mean_data in range(0, mean_length):  # for Loop for iterating the length wit
 # of the array.
 mean_calculation = sum_data / mean_length
 
-print(mean_calculation)# overall output
+print(mean_calculation)  # overall output
