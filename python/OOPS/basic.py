@@ -26,9 +26,12 @@ class __do__not_repeat:
 
 def __instances_class():
     """
-    :return: These keywords are the instances of the class, which
-             is defined on the uppers-ide of the program.
-             Where a variable is equal to the class .
+    :return: These keywords are the instances and objects of the class,
+             which is defined on the uppers-ide of the program.
+
+    :exception: Where a variable is equal to the defined values from
+                other side, They have only private variables, They're
+                not sharing any variables between each other.
     """
     variable_1 = __do__not_repeat()  # these instances are not using anywhere
     _variable__2 = __do__not_repeat()
@@ -37,10 +40,10 @@ def __instances_class():
 def __argument_Class_append():
     """
     :return: These are the arguments of the variable which is defined and
-             equalised to the class __do_not_repeat, and we're adding the
-             value inside the class. Like we're adding the scripts in the template.
+             equalised to the __instances_objects ( private variables ) , and we're adding the
+             value inside the derived class variables.
 
-    :parameter: We used the instances from the upside function to prevent the errors.
+    :parameter: We used the objects from the upside function to prevent the errors.
                 In the program for the compatibility purposes.
     """
     variable_1 = __do__not_repeat()
