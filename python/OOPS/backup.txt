@@ -1,0 +1,47 @@
+class Employees:
+    _no_of_leaves = 10
+    _worktime_year_experience = 4
+    _education_level = "Graduated"
+
+    @property
+    def no_of_leaves(self):
+        return self._no_of_leaves
+
+    @property
+    def education_level(self):
+        return self._education_level
+
+    @property
+    def worktime_year_experience(self):
+        return self._worktime_year_experience
+
+    @no_of_leaves.setter
+    def no_of_leaves(self, value):
+        self._no_of_leaves = value
+
+
+anshu = Employees()
+yash = Employees()
+
+print(f"No. of leaves : {Employees.__dict__}")
+
+anshu.expertise = "Deep learning enthusiast"
+anshu.salary = 3000000
+anshu.role = "Neural networks scientist"
+anshu.no_of_leaves = 4
+Employees.no_of_leaves = 15
+print(f"No. of leaves : {Employees.__dict__}")
+
+
+yash.role = "Student"
+yash.expertise = "Web 3.0 Developer"
+yash.salary = 300400
+
+print(yash.no_of_leaves)
+print(anshu.no_of_leaves)
+print(yash.education_level)
+print(anshu.education_level)
+print(anshu.worktime_year_experience)
+print(yash.worktime_year_experience)
+print(yash.__dict__)
+print(anshu.__dict__)
