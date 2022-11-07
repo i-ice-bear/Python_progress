@@ -1,3 +1,5 @@
+from functools import reduce
+
 """
     Map function map() : the map function is the most powerful function
     which runs very effectively in programs. In a single line.
@@ -6,7 +8,18 @@
                 the map function like array-string{boolean} conversion. anything
                 else etc.
 
-    :return: Anatomy of map({inbuilt-parameters}, {for_which_should_logic_applied} )
+    :return: Anatomy of map({inbuilt-parameters}{custom_parameters}, {for_which_should_logic_applied} )
+    :key: map_statement = list(map(int, array_applicable));
+
+
+    Filter function filter() : Filter function works to filter the elements from the list
+                               and any other data, with the math algorithm
+
+    :Important: list() function is compulsory for returning the list using with
+                the map function like array-string{boolean} conversion. anything
+                else etc.
+    :return: Anatomy of filter({algorithm function}, {for_which_should_function_applied})
+
 
 """
 
@@ -57,4 +70,25 @@ for i in range(3):
     val_exec = list(map(lambda x: x(i), function_array))
     print(val_exec)
 
+# -------------------------- Filter Function ---------------------
 
+numeric_list = [1, 2, 3, 4, 5, 6, 7, 8]
+
+
+def _is_greater_than_5(number_element):
+    return number_element > 5
+
+
+filter_list = list(filter(_is_greater_than_5, numeric_list))
+print("Filter function list :", filter_list)
+
+# ------------------------------ Reduce _____________________________
+
+
+reduce_list = [1, 2, 3, 4]
+reduce_func = reduce(lambda x, y: x + y, reduce_list)
+print(reduce_func)
+
+for i in reduce_list:
+    numbers = i + i
+    # numbers += 1 # alternate
