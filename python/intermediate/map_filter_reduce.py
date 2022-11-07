@@ -86,6 +86,9 @@ print("Filter function list :", filter_list)
 
 
 reduce_list = [1, 2, 3, 4]
+_func_reduce_list = {5, 6, 7, 8}
+# _func_reduce = reduce(lambda z, m: z + m, list(callable(_func_reduce_list)))
+
 reduce_func = reduce(lambda x, y: x + y, reduce_list)
 print(reduce_func)
 
