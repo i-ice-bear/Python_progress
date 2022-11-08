@@ -51,7 +51,7 @@ print(anshu.post_details())
 
 def private_Variables():
     """
-    :return: this are the private variables.
+    :return: these are the private variables.
     """
 
     # anshu.role = "Deep learning enthusiast"
