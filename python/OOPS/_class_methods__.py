@@ -44,6 +44,8 @@ class Employees:
                  constructor and any other function from class.
         :parameter: It can be accessible for both class variable and instance variable, also
                     the constructor variable. without any problem.
+        :ivar: Important: The cls variable should have to same as per the class variable assigned
+                          In class method, to change it.
         """
         cls.no_of_leaves = __new_leaves
 
