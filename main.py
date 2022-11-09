@@ -1,24 +1,23 @@
-import numpy as np
+import pyttsx3
 
-array_state = np.array([1, 2, 3, 4, 5, 6, 7, 8])
-print(array_state)
-
-
-def argsFunction(*args):
-    print(type(args))
-    if len(args) == 3:
-        return "args len is : 3"
-    else:
-        print("args is initially working")
+voice_engine = pyttsx3.init("sapi5")
+__engine__voices_getProperty = voice_engine.getProperty("voices")
+_set_voiceEngine_property = voice_engine.setProperty("voice", __engine__voices_getProperty[1])
+voice_engine.setProperty("rate", 160)
 
 
-def kwargsFunction(**kwargs):
-    print(type(kwargs))
-    for key, value in kwargs.items:
-        print(key, value)
-    if len(kwargs == 3):
-        print("args length is", len(kwargs))
-    else:
-        print("args is initially working")
+def __speakFunc_audio(_function_decorator):
+    def speak_audio():
+        print("Initializing audio now")
+        _function_decorator("Aya, i'm the main audio of this repository")
+        print("Initialised the voice")
+    speak_audio()
 
 
+@__speakFunc_audio
+def __main_speakFunc(audio):
+    voice_engine.say(audio)
+    voice_engine.runAndWait()
+
+    if voice_engine.inLoop:
+        voice_engine.endLoop()
