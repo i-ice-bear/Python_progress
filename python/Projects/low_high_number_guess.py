@@ -23,7 +23,7 @@ def number_guess_function():
         3. Hard = 5 chances
         4. Nightmare = 2 chances
 
-        According to levels the logic was written down below
+        According to levels the inheritance was written down below
         with the usage of while loop and provided clean input
         at all logics to reset the number from its past value
         to continue the game
