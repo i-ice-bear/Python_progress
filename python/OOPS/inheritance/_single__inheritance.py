@@ -1,9 +1,12 @@
 """
-:return: Motherfucker it's related from scientific methods of science
+:return: Demonstration from the science example,
+:parameter : Transfer of the genetic data from parent to child
+             of the parent default function and features to child
+             functions and features. ( From Reproduction ).
 """
 
 
-class Employees:
+class Employees:  # Parent Class
     no_of__employees = 8
 
     def __init__(self, _name, _age, _salary):
@@ -27,11 +30,34 @@ class Employees:
 
 
 anshu = Employees(_name="Anshu", _age=16, _salary=80000)
+yash = Employees(_name="Yash", _age=16, _salary=80000)
 
-no__of_employees = Employees.no_of__employees
-print("Older employee list : ", no__of_employees)
+print(anshu.string_return__statement(), "\n")
+print(yash.string_return__statement(), "\n")
 
-new_employee_list = Employees.change__class_variables(10)
-print("New employee list : ", new_employee_list)
 
-print(anshu.string_return__statement())
+class Programmer(Employees):  # inherited from the parent class.
+    """
+    :return: Prevents the over-writing of the class statement variables form other
+             classes. Which also follows the rule of code re-usability. Without
+             any code malfunctions
+    """
+    def __init__(self, _name, _age, _salary, _programming_language):
+        super().__init__(_name, _age, _salary)
+        self.programming_language = _programming_language
+
+    def print__statement(self):
+        return f"Name : {self.name} \n" \
+               f"Age : {self.age} \n" \
+               f"Salary : {self.salary} \n" \
+               f"Language : {self.programming_language}"
+    pass
+
+
+mayank = Programmer("Mayank", 16, 40000, "Go")
+
+print(mayank.print__statement(), "\n")
+
+
+if __name__ == "__main__":
+    print(__name__)
