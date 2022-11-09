@@ -1,3 +1,16 @@
+"""
+
+:return: Data abstraction and encapsulation are synonymous as data abstraction
+         is achieved through encapsulation. Abstraction is used to hide internal
+         details and show only functionalities. Abstracting something means
+         to give names to things, so that the name captures the basic idea of
+         what a function or a whole program does.
+
+:param: Abstraction - The main output of class. ( execution )
+:parameter: Encapsulation - the functionality of class ( process )
+"""
+
+
 class FriendList:
     __annotations__ = True
     no__of_friends = 6
