@@ -18,6 +18,7 @@ while True:
 
     cv.imshow('frame', gray)
     if cv.waitKey(1) == ord('q'):
+        print("You Exited from the program")
         break
 
 # When everything done, release the capture
