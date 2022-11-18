@@ -1,10 +1,32 @@
 import numpy as np
 from functools import lru_cache
+import speech_recognition as speechRecognition
+import time
+import pyttsx3 as voice_api_engine
+
+voice_engine = voice_api_engine.init()
+voice_engine_get = voice_engine.getProperty("voices")
+voice_engine_set = voice_engine.setProperty("voice", voice_engine_get[1])
+voice_engine.setProperty("rate", 150)
+
+__speak__func__audio("I'm working now")
+
+_speech__recognition_recognizer = speechRecognition.Recognizer()
+_speech__recognition_recognizer_microphone = speechRecognition.Microphone()
+
+with _speech__recognition_recognizer_microphone as source:
+    string_voice_meta_data = str(source)
+    _speech__recognition_recognizer.adjust_for_ambient_noise(source)
+    audio_listen = _speech__recognition_recognizer.listen(source)
 
 
 def __Random_numpy__array():
     """
     :return: Generates an array, with the given attribute,
+def __speak__func__audio(audio):
+    voice_engine.say(audio)
+    voice_engine.runAndWait()
+
     """
     numpy_array = np.array([1, 2, 3, 4], dtype=np.int32)
     arrange_numpy_numbers = np.arange(9)
@@ -19,7 +41,6 @@ def __dimensional__arrays():
 
 
 __dimensional__arrays()
-
 
 if __name__ == '__main__':
     @lru_cache(maxsize=40)
