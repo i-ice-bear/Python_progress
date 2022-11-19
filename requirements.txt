@@ -7,3 +7,4 @@ pyttsx3~=2.90
 opencv-python~=4.6.0.66
 future~=0.18.2
 matplotlib~=3.5.2
+newsapi-python~=0.2.6
