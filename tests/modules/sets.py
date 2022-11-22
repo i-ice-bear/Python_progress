@@ -1,6 +1,3 @@
-import math
-import statistics
-
 # # sort of ascending and descending order in the form of sort function
 #
 # list_set = eval(input("Enter a list : "))
