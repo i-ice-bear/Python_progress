@@ -7,7 +7,7 @@ import time
 voice_engine_init = voice_engine.init()
 voice_engine_get_Prop = voice_engine_init.getProperty("voices")
 print(voice_engine_get_Prop)
-voice_engine_set_Prop = voice_engine_init.setProperty("voice", voice_engine_get_Prop[2])
+voice_engine_set_Prop = voice_engine_init.setProperty("voice", voice_engine_get_Prop[0])
 voice_engine_init.setProperty("rate", 150)
 current__time = datetime.datetime.now()
 __time_statement = current__time.strftime('%H:%M')
@@ -35,11 +35,11 @@ def __wish_listener():
 def FetchNews():
     __wish_listener()
     parameters = {
-        "country": "kr",
+        "source": "bbc-news",
         "sortBy": "top",
-        "apiKey": "391b845c95b64b0ea4a5c67fe7d31a41"
+        "apiKey": "4dbc17e007ab436fb66416009dfb59a8"
     }
-    __main__root_url = "https://newsapi.org/v2/top-headlines?country=kr&apiKey=391b845c95b64b0ea4a5c67fe7d31a41"
+    __main__root_url = "https://newsapi.org/v1/articles"
     response_api_get = requests.get(url=__main__root_url, params=parameters)
 
     open__news__data = response_api_get.json()
